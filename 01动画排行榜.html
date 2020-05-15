@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            border: 0;
+            list-style: none;
+        }
+
+        .box {
+            width: 320px;
+            border: 1px solid #ccc;
+            margin: 50px auto;
+            font-size: 12px;
+        }
+
+        .box li {
+            border-top: 1px dashed #ccc;
+            padding: 10px;
+        }
+
+        li span:nth-child(1) {
+            display: inline-block;
+            text-align: center;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            background: #666;
+            color: #fff;
+            margin-right: 10px;
+        }
+
+        .box li:nth-child(-n+3) span:nth-child(1) {
+            background: #F23D7C;
+
+        }
+
+        .content {
+            overflow: hidden;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .content img {
+
+            width: 80px;
+            height: 110px;
+            float: left;
+            margin-right: 5px;
+        }
+
+        .content p {
+            float: left;
+            width: 210px;
+            line-height: 18px;
+            font-size: 12px;
+        }
+
+        h4 {
+            color: #F23D7C;
+            line-height: 50px;
+            padding-left: 10px;
+            font-size: 18px;
+        }
+
+        .cur .content {
+            display: block;
+        }
+    </style>
+    <script src="./js/jquery.min.3.4.1.js"></script>
+</head>
+
+<body>
+    <!--外边框-->
+    <div class="box">
+        <h4>动漫排行</h4>
+        <ul>
+            <li class="cur">
+                <span>1</span><span>秦时明月</span>
+                <div class="content">
+                    <img src="images/01.jpg" alt="">
+                    <p>《秦时明月》系列是由中国杭州玄机科技信息技术有限公司制作的3D武侠动画系列，于2007年春节期间起在中国全国各地正式首映，网络上亦有授权播出。另有衍生出的仅在网络、不在电视播出的姐妹篇《天行九歌》...
+                    </p>
+                </div>
+            </li>
+            <li><span>2</span><span>天行九歌</span>
+                <div class="content">
+                    <img src="images/02.jpg" alt="">
+                    <p>《天行九歌》该动画以韩国公子韩非建立的“流沙”组织为主视角，展开六国对抗秦国的众生百态，使观众进入战国末年风起云涌、群雄并起、百家争鸣的大时代中的故事。</p>
+                </div>
+            </li>
+            <li><span>3</span><span>斗罗大陆</span>
+                <div class="content">
+                    <img src="images/03.jpg" alt="">
+                    <p> 《斗罗大陆》唐门外门弟子唐三，因偷学内门绝学为唐门所不容，跳崖明志时却发现没有死，反而以另外一个身份来到了另一个世界，一个属于武魂的世界，名叫斗罗大陆。</p>
+                </div>
+            </li>
+            <li><span>4</span><span>一人之下</span>
+                <div class="content">
+                    <img src="images/04.jpg" alt="">
+                    <p>《一人之下》是2015年2月26日开始在网络平台腾讯动漫上连载的一部网络漫画作品，作者是米二。 [1] 2016年8月开始由浙江人民美术出版社发售漫画单行本。 [2] 作品亦改编为同名电视动画。
+                    </p>
+                </div>
+            </li>
+            <li><span>5</span><span>斗破苍穹</span>
+                <div class="content">
+                    <img src="images/05.jpg" alt="">
+                    <p>《斗破苍穹》是一本连载于起点中文网的古装玄幻小说，作者是起点白金作家天蚕土豆（李虎），已完结。这里是属于斗气的世界，没有花俏艳丽的魔法，有的，仅仅是繁衍到巅峰的斗气！</p>
+                </div>
+            </li>
+            <li><span>6</span><span>星辰变</span>
+                <div class="content">
+                    <img src="images/06.jpg" alt="">
+                    <p>《星辰变》是在起点中文网上连载的奇幻修真小说，作者是我吃西红柿。小说以一个庞大的修真世界为背景，讲述了主角秦羽不甘于没落、努力修炼跨越先天不足的劣势，一步步踏上强者之路，最终成为鸿蒙掌控者的故事。
+                    </p>
+                </div>
+            </li>
+            <li><span>7</span><span>墓王之王</span>
+                <div class="content">
+                    <img src="images/07.jpg" alt="">
+                    <p>《墓王之王》是河北铸梦文化传播有限公司（简称：铸梦动画）倾力打造的墓派武侠3D网络动画，立足原创高品质动画定位，打造精品IP，开墓派武侠之先河，辟全新类型动画之创举，为国产原创动画再添精品。
+                    </p>
+                </div>
+            </li>
+            <li><span>8</span><span>西行纪之集结篇</span>
+                <div class="content">
+                    <img src="images/08.jpg" alt="">
+                    <p>《西行纪之集结篇》唐三藏师徒四人取得奇经交予天庭的十六年后，如今奇经下落不明，天庭血洗天羽山大肆搜寻，狼妖白狼不辞万难地寻回唐僧师徒，小队集结踏上还经之路……</p>
+                </div>
+            </li>
+            <li><span>9</span><span>万界仙踪</span>
+                <div class="content">
+                    <img src="images/09.jpg" alt="">
+                    <p>《万界仙踪》家族大会之后，炎绝在逃亡路上被叶星云设局击毙，炎武一族实力骤减。玄冥世家蠢蠢欲动，绑架叶雪云想借机与青羽世家摊牌，却被叶星云安插在宁城的密探羽音发觉，最后叶星云亲自前往玄冥地牢...
+                    </p>
+                </div>
+            </li>
+            <li><span>10</span><span>武庚纪</span>
+                <div class="content">
+                    <img src="images/10.jpg" alt="">
+                    <p>最强脑洞封神演义《武庚纪》，是由玄机科技与腾讯视频联合出品，是由杭州玄机科技信息技术有限公司根据香港封神漫画题材改编而来的动画系列，并由著名动画导演沈乐平(《秦时明月》总导演)亲自执导</p>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+    <script>
+        $('li').hover(function(){
+            $(this).addClass('cur').siblings().removeClass('cur')
+        })
+    </script>
+</body>
+
+</html>

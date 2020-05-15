@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>document</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            border: 0;
+            list-style: none;
+        }
+
+        body {
+            background: #000;
+        }
+
+        .box {
+            width: 600px;
+            height: 350px;
+            border: 1px solid #f40;
+            margin: 50px auto;
+            overflow: hidden;
+        }
+
+        .box ul {
+            width: 9999px;
+            position: relative;
+        }
+
+        .box ul li {
+            float: left;
+        }
+
+        .box ul li img {
+            width: 600px;
+            height: 350px;
+        }
+    </style>
+    <script src="js/jquery.min.3.4.1.js"></script>
+</head>
+
+<body>
+
+
+    <div class="box">
+
+        <ul>
+            <li><img src="images/0.jpg" alt=""></li>
+            <li><img src="images/1.jpg" alt=""></li>
+            <li><img src="images/2.jpg" alt=""></li>
+            <li><img src="images/3.jpg" alt=""></li>
+            <!--不要出现黑边-->
+            <li><img src="images/4.jpg" alt=""></li>
+            <li><img src="images/0.jpg" alt=""></li>
+        </ul>
+
+    </div>
+
+    <script>
+     var i = 0
+     var timer = setInterval(function(){
+         i++
+         $('ul').css('right',i)
+         if(i>=$('li').get(0).offsetWidth*($('li').length-1)){
+             i=0
+             $('ul').css('right',i)
+         }
+     }, 1);
+     $('ul').mouseover(function(){
+         clearInterval(timer)
+     })
+     $('ul').mouseout(function(){
+        clearInterval(timer)
+        timer = setInterval(function(){
+         i++
+         $('ul').css('right',i)
+         if(i>=$('li').get(0).offsetWidth*($('li').length-1)){
+             i=0
+             $('ul').css('right',i)
+         }
+     }, 1);
+     })
+    </script>
+
+
+</body>
+
+</html>

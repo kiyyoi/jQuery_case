@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>知行合壹标签切换</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            border: 0;
+            list-style: none;
+        }
+
+        .box {
+            width: 1000px;
+            margin: 50px auto;
+        }
+
+        .box .title {
+            width: 600px;
+            height: 44px;
+            border: 3px solid #ccc;
+            /*头部设置往下走3个像素,遮盖住下面的面的内容*/
+            position: relative;
+            top: 3px;
+            /*注意一定要设置背景颜色*/
+            background: #fff;
+            border-bottom: none;
+        }
+
+        .box .content {
+            width: 1000px;
+            height: 475px;
+            border: 3px solid #ccc;
+            
+        }
+        .box .content img{
+            width: 1000px;
+            height: 475px;
+        }
+        .box ul {
+            overflow: hidden;
+        }
+
+        .box ul li {
+            float: left;
+            padding: 10px;
+        }
+
+        .box ul .cur {
+            color: red;
+            font-size: 18px;
+        }
+        /*把所有content下面的div给隐藏掉*/
+        .content {
+            overflow: hidden;
+        }
+        .content div{
+            display: none;
+        }
+        /*当content有active类的时候,才让它显示*/
+        .content .active{
+            display: block;
+        }
+
+    </style>
+    
+    
+    <script src="js/jquery.min.3.4.1.js"></script>
+    
+</head>
+<body>
+
+
+<div class="box">
+    <div class="title">
+        <ul>
+            <li class="cur">哪吒之魔童降世</li>
+            <li>冰雪奇缘2</li>
+            <li>千与千寻</li>
+            <li>至爱梵高</li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="active"><img src="images/01.webp" alt=""></div>
+        <div><img src="images/02.webp" alt=""></div>
+        <div><img src="images/03.webp" alt=""></div>
+        <div><img src="images/04.webp" alt=""></div>
+    </div>
+
+</div>
+
+    <script>
+        $('li').mouseenter(function(){
+            $(this).addClass('cur').siblings().removeClass('cur');
+            var index = $(this).index();
+            $('.content div').eq(index).stop().slideDown(1000).siblings().stop().slideUp(1000);
+        })
+    </script>
+</body>
+</html>
